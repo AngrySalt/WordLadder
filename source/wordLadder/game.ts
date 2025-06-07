@@ -1,6 +1,5 @@
 import { ChatInputCommandInteraction, Client, Colors, EmbedBuilder, GuildTextBasedChannel, Message, MessageCreateOptions } from "discord.js";
 import { Scores } from "../score.js";
-import { Model } from "sequelize";
 
 export class Game {
     static games : Map<string,Game> = new Map();

@@ -2,7 +2,7 @@ import { ChatInputCommandInteraction, Client, Events, InteractionReplyOptions, M
 import { createRequire } from "module";
 import fs from "node:fs";
 import path from "node:path";
-import settings from "../settings.json" with {type: "json"}
+import secrets from "../secrets.json" with {type: "json"}
 const require = createRequire(import.meta.url);
 
 export class Command {
@@ -34,11 +34,11 @@ export function parseCommands(client : Client) {
         };
     });
 
-    const rest = new REST().setToken(settings.token);
+    const rest = new REST().setToken(secrets.token);
     (async () => {
         try {
             console.log(`Refreshing ${commandData.length} (/) commands`)
-            const registeredCommands = await rest.put(Routes.applicationCommands(settings.id),{body:commandData}) as [];
+            const registeredCommands = await rest.put(Routes.applicationCommands(secrets.id),{body:commandData}) as [];
             console.log(`Succesfully refreshed ${registeredCommands.length} (/) commands`);
         } catch(e) {
             console.error("Error while refreshing (/) commands: %d",e);

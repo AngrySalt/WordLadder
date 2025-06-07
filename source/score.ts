@@ -4,9 +4,9 @@
  * Words used
  */
 import { DataTypes, Sequelize } from "sequelize";
-import settings from "../settings.json" with {type:"json"}
+import secrets from "../secrets.json" with {type:"json"}
 
-const sequelize = new Sequelize('postgres', 'postgres', settings.postgres_password, {
+const sequelize = new Sequelize('postgres', 'postgres', secrets.postgres_password, {
 	host: 'localhost',
 	dialect: "postgres",
 	logging: false,
