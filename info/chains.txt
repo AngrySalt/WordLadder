@@ -1,0 +1,15 @@
+Valid chain words will count towards your score in endless mode, and can get you closer to your goal word.
+Valid chain words must follow these rules:
+1: They must be unique, meaning you can't go in an infinite loop using the same 3 words.
+2: They must be the same length
+3: Your message should contain only a singular word, any special characters or spaces will cause the bot to ignore you.
+4: Capitilization does not matter
+5: They must have only a one letter difference from the previous word:
+Starting word: cat
+| ✅ bat is valid
+| ✅ ban is valid
+| ❌ nat is invalid
+6: They must be a valid dictionary entry
+Starting Word: cart
+| ✅ dart is valid
+| ❌ bart is invalid

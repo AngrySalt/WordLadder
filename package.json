@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "start": "node output/main"
+    },
+    "dependencies": {
+        "discord.js": "^14.14.1",
+        "git": "^0.1.5",
+        "pg": "^8.16.0",
+        "sequelize": "^6.37.7"
+    }
+}

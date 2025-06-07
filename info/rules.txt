@@ -1,0 +1,7 @@
+The goal of word ladder differs depending on whether or not you choose a winning word.
+In endless, there is no winning word, so the goal is to just find as many "chain" words as possible.
+Otherwise, the goal is to get from the beginning word to the end word.
+For info on what "chain" words are valid, use "/info chains"
+
+
+

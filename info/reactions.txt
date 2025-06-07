@@ -1,0 +1,4 @@
+✅ - Your word is valid, and is now the current one
+❓ - The dictionary API is unreachable, so your word is assumed to be valid 
+❌ - Your word is invalid
+None - Your message contains special characters

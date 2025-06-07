@@ -1,0 +1,3 @@
+If you want imformation on any topics regarding the Word Ladder bot, use /info and specify a topic.
+For example: "/info rules" explains the rules to word ladder.
+Where as "/info credits" credits everyone who contributed to this bot.

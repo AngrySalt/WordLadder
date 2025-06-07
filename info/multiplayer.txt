@@ -1,0 +1,7 @@
+You can disable multiplayer by setting the "multiplayer" bool to false.
+When multiplayer is enabled, anyone can reply to the bot to get the answer.
+Otherwise, only the person who started the Word Ladder can reply.
+This may be useful for preventing trolls from getting you off the path to your goal word.
+
+In multiplayer, all score goes to the person who created the game.
+So if you're trying to boost your own scores, make sure to create your own game.

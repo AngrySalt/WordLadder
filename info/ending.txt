@@ -1,0 +1,9 @@
+There are 3 manual ways to end a word ladder:
+1: Using "/wordladder end" will end your current word ladder.
+2: Reacting "❌" to a message from a word ladder you started will end that ladder.
+3: Administrators deleting a message from a word ladder will end it.
+A word ladder can also end automatically if:
+1: You reach your target word
+2: There are no replies for over 3 minutes
+
+    
