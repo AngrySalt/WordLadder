@@ -1,3 +1,6 @@
+/**
+ * Show player scores
+ */
 import { Colors, EmbedBuilder, MessageFlags, SlashCommandBuilder } from "discord.js";
 import { Command } from "../commandParser.js";
 import { Scores } from "../score.js";

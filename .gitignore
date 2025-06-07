@@ -1,4 +1,4 @@
 package-lock.json
-settings.json
+secrets.json
 output
 node_modules

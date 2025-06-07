@@ -4,11 +4,11 @@
 import { Client, Events } from "discord.js";
 import { Game } from "./game.js";
 import { getGame } from "./gameplay.js";
-import settings from "../../settings.json" with {type: "json"}
+import secrets from "../../secrets.json" with {type: "json"}
 
 export function ready(client : Client) {
     client.on(Events.MessageDelete,(message)=>{
-        if (message.author.id != settings.id) return;
+        if (message.author.id != secrets.id) return;
         getGame(message.id)?.end("Admin ended the game",client);
     });
     client.on(Events.MessageReactionAdd,(reaction,user)=>{

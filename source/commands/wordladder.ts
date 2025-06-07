@@ -1,3 +1,6 @@
+/**
+ * Command to start and end word ladders
+ */
 import { ChatInputCommandInteraction, Client, MessageFlags, SlashCommandBuilder } from "discord.js";
 import {Command} from "../commandParser.js";
 import { Game } from "../wordLadder/game.js";

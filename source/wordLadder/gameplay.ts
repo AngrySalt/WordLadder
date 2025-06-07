@@ -33,6 +33,7 @@ export function ready(client : Client) {
             message.react("❌");
             return;
         }
+        // Check the dictionary api to ensure word is real
         let isWord = true;
         fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+msgText).then(async (v)=>{
             const jsonData = await v.json();

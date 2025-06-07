@@ -1,4 +1,4 @@
-[AngrySalt](https://github.com/AngrySalt) - Bot developer
+[AngrySalt](https://github.com/AngrySalt) - [Bot](https://github.com/AngrySalt/WordLadder) developer
 [Dictionary API](https://github.com/meetDeveloper/freeDictionaryAPI) - Database used to validate chain words
 [Discord.js](https://github.com/discordjs) - JS library for interacting with the Discord API
 [PostgreSQL](https://github.com/postgres) - Database system used to store user scores
