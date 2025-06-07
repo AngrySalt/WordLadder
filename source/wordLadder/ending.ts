@@ -21,7 +21,7 @@ export function ready(client : Client) {
     client.on(Events.ClientReady,()=>{
         setInterval(()=>Game.games.forEach((game)=>{
             // 3 minutes
-            if ((Date.now() - game.lastReplied) >= 180000) game.end("Game timer ran out because nobody replied",client);
+            if ((Date.now() - game.lastReplied) >= 180000) game.end("Game expired because nobody replied",client);
         }),30000) // 30 seconds
     });
 }

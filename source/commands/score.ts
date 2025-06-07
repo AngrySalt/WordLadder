@@ -12,7 +12,7 @@ export const ScoreCommand : Command = {
     async execute(interaction, _) {
         const user = interaction.options.getUser("user",false) ?? interaction.user;
         const score = await Scores.findOne({where: {id:user.id}});
-        if (!score) return {content:"User has never played a word ladder",flags:[MessageFlags.Ephemeral]}
+        if (!score) return {content:"❌ User has never played a word ladder",flags:[MessageFlags.Ephemeral]}
         const totalPlays : number = score.getDataValue("total_plays");
         const endlessPlays : number = score.getDataValue("endless_plays");
 

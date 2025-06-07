@@ -4,6 +4,14 @@
 import { Events, MessageType, Message, Client } from "discord.js";
 import { Game } from "./game.js";
 
+export function oneCharacterDifference(a : string,b : string) : boolean {
+    let nonMatchingCharacters = 0
+    for (let i = 0; i < a.length && nonMatchingCharacters < 2;i++) {
+        if (a.at(i) != b.at(i)) nonMatchingCharacters++;
+    }
+    return nonMatchingCharacters === 1;
+}
+
 export function ready(client : Client) {
     client.on(Events.MessageCreate,async (message)=>{
         if (message.system || message.author.bot || message.type != MessageType.Reply || !message.content.match("^[A-z]+$")) return;
@@ -24,12 +32,7 @@ export function ready(client : Client) {
             message.react("❌");
             return;
         }
-        // Make sure new word is only one letter away
-        let nonMatchingCharacters = 0;
-        for (let i = 0; i < msgText.length && nonMatchingCharacters < 2;i++) {
-            if (msgText.at(i) != game.currentWord.at(i)) nonMatchingCharacters++;
-        }
-        if (nonMatchingCharacters != 1) {
+        if (!oneCharacterDifference(msgText,game.currentWord)) {
             message.react("❌");
             return;
         }
@@ -44,7 +47,8 @@ export function ready(client : Client) {
             }
             message.react("✅");
         }).catch((e)=>{
-            message.react("❓");
+            message.react("❓"); // Dictionary api may be down, still count as correct.
+            game.dictionaryBlocked = true; // But don't submit the score, too dangerous to do so.
         }).finally(async ()=>{
             if (!isWord) return;
             game.usedWords.push(msgText);

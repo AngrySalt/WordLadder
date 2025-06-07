@@ -13,6 +13,7 @@ export class Game {
     startingChannelId : string
     winningWord? : string
     lastReplied : number
+    dictionaryBlocked : boolean = false // Turns true if we can't access the dictionary api
     private sendMessage(newMessage : MessageCreateOptions,client : Client) {
         const channel = client.channels.cache.get(this.startingChannelId) as GuildTextBasedChannel;
         channel.send(newMessage);
@@ -61,6 +62,7 @@ export class Game {
             .addFields({name:"Word Count",value:this.usedWords.length.toString()});
         this.sendMessage({embeds:[embed]},client);
         Game.games.delete(this.startingUserId);
+        if (this.dictionaryBlocked) return;
         this.saveStreak();
     }
     win(message : Message<true>,client : Client) {
@@ -71,6 +73,7 @@ export class Game {
             .addFields({name:"Word Count",value:(this.usedWords.length+1).toString()});
         this.sendMessage({embeds:[embed]},client);
         Game.games.delete(this.startingUserId);
+        if (this.dictionaryBlocked) return;
         Scores.increment("wins",{where:{id:this.startingUserId}}).then(()=>this.saveStreak());
     }
     start(interaction : ChatInputCommandInteraction) {
